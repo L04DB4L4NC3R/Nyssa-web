@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 
 /* GET home page. */
 router.get('/', (req, res, next)=>{
-  res.json({message:"login/register"});
+  res.render('index');
 });
 
 //middleware to check tokens
