@@ -5,7 +5,7 @@ const scrape = require("../helpers/scrape").scrape;
 
 
 
-router.get('/',(req,res,next)=>{
+router.get('/result',(req,res,next)=>{
 
     //TODO extract array from python output
     var array = ["polka underpants","shirt","underpants","condoms"];

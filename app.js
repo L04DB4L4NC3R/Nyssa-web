@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var session = require('express-session');
 var bodyParser = require('body-parser');
+var secretkey = require("./secret").secretkey;
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -23,7 +24,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
-    secret:"shhhhhh",
+    secret:secretkey,
     saveUninitialized:false,
     resave:false
 }));

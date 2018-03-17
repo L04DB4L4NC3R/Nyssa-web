@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+var mongoURL = require("../secret/secret").mongoURL;
 
-mongoose.connect("mongodb://localhost/nyssa");
+mongoose.connect(mongoURL);
 
 mongoose.connection.once("open",()=>{
     console.log("connected to database");
