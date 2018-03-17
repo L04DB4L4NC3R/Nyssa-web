@@ -36,7 +36,6 @@ module.exports.hashAndSave = (obj)=>{
 
 
 module.exports.verifyRoute = (req,res,next)=>{
-
-    if(req.session.email===undefined) res.sendStatus(403);
+    if(req.session.name===undefined) res.redirect('/');
     else next();
 }

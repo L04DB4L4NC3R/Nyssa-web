@@ -1,12 +1,13 @@
 var express = require('express');
 var router = express.Router();
-model = require("../database/model").profileModel;
-hashAndSave = require("../helpers/login").hashAndSave;
+var model = require("../database/model").profileModel;
+var hashAndSave = require("../helpers/login").hashAndSave;
+var verifyRoute = require("../helpers/login").verifyRoute;
 const bcrypt = require("bcrypt");
 
 /* GET home page. */
 router.get('/', (req, res, next)=>{
-  res.sendStatus(200);
+  res.json({message:"login/register"});
 });
 
 //middleware to check tokens
@@ -27,8 +28,8 @@ router.post("/login",(req,res,next)=>{
 
               if(result){
                   //save user email in cookies
-                  req.session.email = req.body.email;
-                  res.sendStatus(200);
+                  req.session.name = req.body.name;
+                  res.redirect('/home');
               }
 
 
@@ -52,12 +53,19 @@ router.post('/register',(req,res,next)=>{
             hashAndSave(obj).then(()=>{
                 //save user email in cookies;
                 req.session.name = req.body.name;
-                res.sendStatus(200);
+                res.redirect('/home');
             }).catch(err=>res.json({message:err}));
         }
         else res.json({message:"user already exists"});
     }).catch(err=>res.sendStatus(500));
 });
 
+
+router.get('/logout',verifyRoute,(req,res,next)=>{
+
+    req.session.name = undefined;
+    res.redirect('/');
+
+});
 
 module.exports = router;

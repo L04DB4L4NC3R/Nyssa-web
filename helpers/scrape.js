@@ -18,8 +18,13 @@ module.exports.scrape = (url,query)=>{
             var $ = cheerio.load(data);
 
             //TODO
-            var dom = 'body';
+            var dom = 'div._2SxMvQ';
             var soup = $(dom);
+
+            // $(dom).each((i,data)=>{
+            //     var element = $(this);
+            //     console.log(element);
+            // });
             resolve({html:soup.html()});
 
         });

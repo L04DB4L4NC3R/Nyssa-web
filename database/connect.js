@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-var mongoURL = require("../secret/secret").mongoURL;
+var mongoURL = require("../secret").mongoURL;
 
 mongoose.connect(mongoURL);
 
