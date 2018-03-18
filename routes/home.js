@@ -45,7 +45,12 @@ router.get('/result',(req,res,next)=>{
     //TODO make loop work
     //for(query of array){
         scrape("https://www.amazon.co.uk/s/?field-keywords=","shirt")
-        .then(object=>res.sendStatus(200))
+        .then(()=>{
+            fs.readFile(__dirname + '/scraped.txt','utf8',(err,data)=>{
+                res.send(data)//data = data.split('$');
+                //res.render("result",{data});
+            });
+        })
         .catch((err)=>{
             console.log(err);
             res.sendStatus(500);

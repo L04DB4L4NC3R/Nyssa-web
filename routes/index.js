@@ -37,6 +37,9 @@ router.post("/login",(req,res,next)=>{
                 res.json({message:"incorrect password"});
         });
 
+    }).catch((err)=>{
+        console.log(err);
+        res.sendStatus(500);
     });
 });
 

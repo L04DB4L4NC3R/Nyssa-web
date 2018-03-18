@@ -24,7 +24,7 @@
         <a class="navbar-brand js-scroll-trigger b0" href="#page-top"><b>HOME</b></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="border-color:rgba(240, 233, 233, 0.5);" >
-            <span class="navbar-toggler-icon" style="background-image:url('./img/ham.png');"></span>
+            <span class="navbar-toggler-icon" style="background-image:url('../static/pic/ham.png');"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
@@ -46,21 +46,21 @@
 
 
 <div class="container-fluid main" align="middle">
-    <img src="../static/pic/logo.png" class="img-responsive i1" align="middle">
+    <img src="../static/pic/Logo.png" class="img-responsive i1" align="middle">
     <div class="container c1" align="middle">
         <div id="txt1">Sign into your account</div><hr>
         <form action="/login" method='post'>
         <div id="mail">
         <div class="input-group ip1" align="middle">
-            <input type="text" id="i1" placeholder="E-mail ID" class="form-control f1" >
+            <input type="text" id="i1" placeholder="E-mail ID" class="form-control f1" name='name'>
         </div>
         </div>
         <div id="psw">
         <div class="input-group ip2"  align="middle">
-            <input type="password" placeholder="Password" id="i2" class="form-control f2" >
+            <input type="password" placeholder="Password" id="i2" class="form-control f2" name="passwd" >
         </div>
         </div>
-        <button class="btn" type="button" id="b1"><strong>LOGIN</strong></button><BR>
+        <button class="btn" type="submit" id="b1"><strong>LOGIN</strong></button><BR>
         </form>
         <div id="txt2">Forgot your password?</div><hr>
         <div id="txt2">Don't have an account? <a id="anch1" href="/register">Sign Up.</a></div>
@@ -75,7 +75,7 @@
     <br><br>
     <br>
 <div class="container-fluid row">
-    <div class="col-sm-4" align="right"><img src="pic/bg4.png" style="height:300px" class="img-responsive i2"></div><br><br><br>
+    <div class="col-sm-4" align="right"><img src="../static/pic/bg4.png" style="height:300px" class="img-responsive i2"></div><br><br><br>
 <div class="col-sm-6" align="middle">
 
     <div id="txt3">
