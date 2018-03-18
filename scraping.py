@@ -1,11 +1,12 @@
 import bs4
-from urllib import request
+#from urllib import request
+import requests
 import sys
 
 
 def bfulSoup(url):    #to return google,youtube and wiki links to given query adn extract top 10 links from wikipedia
     try:
-        file= request.urlopen(url).read()
+        file= requests.get(url).text#request.urlopen(url).read()
         content = bs4.BeautifulSoup( file,'html.parser')
 
 
@@ -14,7 +15,6 @@ def bfulSoup(url):    #to return google,youtube and wiki links to given query ad
         for img in imgs:
             f.write(str(img))
         f.close()
-
 
     except:
         pass
