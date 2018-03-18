@@ -9,7 +9,7 @@ var uploads = multer({dest:'public/images/'});
 router.use(verifyRoute);
 
 router.get('/',(req,res,next)=>{
-    res.json({message:"You have reached home"});
+    res.render('main');
 });
 
 
