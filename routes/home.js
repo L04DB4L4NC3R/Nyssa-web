@@ -1,10 +1,11 @@
 const router = require("express").Router();
 const verifyRoute = require("../helpers/login").verifyRoute;
 const scrape = require("../helpers/scrape").scrape;
-const multer = require("multer");
+const multer = require('multer');
+var upload = multer({dest:'public/images/'});
 const fs = require("fs");
 
-var uploads = multer({dest:'public/images/'});
+
 
 router.use(verifyRoute);
 
@@ -13,20 +14,37 @@ router.get('/',(req,res,next)=>{
 });
 
 
-router.post('/',uploads.single("file"),(req,res,next)=>{
+router.post('/',upload.single('file'),(req,res,next)=>{
 
-    if(req.file ===undefined ){
+
+// console.log(req.body);
+// res.send(200);
+//
+// res.send("hag")
+//     var base64Data = req.body.data.split(',')[0].replace(/^data:image\/png;base64,/, "");
+
+//require("fs").writeFile("out.png", base64Data, 'base64', function(err) {
+  //console.log(err);
+//});
+
+
+
+
+
+
+    if(req.body.file ===undefined ){
         res.redirect('/home');
     }
     else{
-        fs.rename(req.file.path,"public/images/"+req.file.originalname)
-        .then(()=>{
-            res.redirect('/home/result');
-        })
-        .catch((err)=>{
-            console.log(err);
-            res.sendStatus(500);
-        });
+        res.redirect('/home/result');
+        // fs.rename(req.file.path,"public/images/"+req.file.originalname)
+        // .then(()=>{
+        //     res.redirect('/home/result');
+        // })
+        // .catch((err)=>{
+        //     console.log(err);
+        //     res.sendStatus(500);
+        // });
     }
 
 });
@@ -39,12 +57,12 @@ router.post('/',uploads.single("file"),(req,res,next)=>{
 router.get('/result',(req,res,next)=>{
 
     //TODO extract array from python output
-    var array = ["polka underpants","shirt","underpants","condoms"];
+    var array = ["polka","shirt","underpants","pants"];
 
 //https://www.amazon.com/s/?field-keywords=
     //TODO make loop work
     //for(query of array){
-        scrape("https://www.amazon.co.uk/s/?field-keywords=","shirt")
+        scrape("https://www.amazon.co.uk/s/?field-keywords=","black+pants+for+men")
         .then(()=>{
             fs.readFile(__dirname + '/scraped.txt','utf8',(err,data)=>{
                 res.send(data)//data = data.split('$');

@@ -2,7 +2,7 @@
 <<head>
     <link rel="stylesheet" href="../static/style_main.css">
     <title>Nyssa</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway|Sacramento" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
     <script type="text/javascript" src="../static/webcamjs/webcam.min.js"></script>
@@ -21,8 +21,8 @@
 <div id="txt5" align="middle">Let us capture our apparel</div>
 <div id="my_camera" align="middle"></div>
 <div id="btn1" align="middle"><input type=button value="Take Snapshot" id="b1" align="middle" onClick="take_snapshot()"></div>
-<div id="btn2" align="middle"><input type=button value="UPLOAD" id="b1" align="middle" onClick="loadDoc()"></div>
-
+<form action="/home/result"><div id="btn2" align="middle"><input type=submit value="UPLOAD" id="b1" align="middle" ></div>
+</form>
 <div id="results" align="middle"></div>
 
 
@@ -53,7 +53,19 @@
 
             document.getElementById("btn1").style.visibility = "hidden";
             document.getElementById("btn2").style.visibility = "visible";
-            console.log("URI:",data_uri);
+
+            // $.post('/home',{file:data_uri},(data)=>{
+            //     console.log(data);
+            // });
+
+            // $("#b1").on('click',(e)=>{
+            //     e.preventDefault();
+            //     alert("hi")
+            //     $.post('/home',{file:data_uri},(data)=>{
+            //         alert(data);
+            //     });
+            // });
+
         } );
 
     }
@@ -61,16 +73,6 @@
     // function hideEle(){
     //     document.getElementById("my_camera").style.visibility = "hidden";
     // }
-    function loadDoc() {
-        var xhttp = new XMLHttpRequest();
-        console.log("..........................",xhttp);
-        xhttp.onreadystatechange = function () {
-
-            xhttp.open("GET", '{"file":"data_uri"}', true);
-            console.log(this.responseText);
-            xhttp.send();
-        };
-    };
 
 
 
