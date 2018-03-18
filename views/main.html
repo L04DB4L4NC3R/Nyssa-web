@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<<head>
+    <link rel="stylesheet" href="style_main.css">
+    <title>Nyssa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Sacramento" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+    <script type="text/javascript" src="webcamjs/webcam.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nova+Square" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Parisienne" rel="stylesheet">
+</head>
+<body>
+
+<div id="txt5" align="middle">Let us capture our apparel</div>
+<div id="my_camera" align="middle"></div>
+<div id="btn1" align="middle"><input type=button value="Take Snapshot" id="b1" align="middle" onClick="take_snapshot()"></div>
+<div id="btn2" align="middle"><input type=button value="UPLOAD" id="b1" align="middle" onClick="loadDoc()"></div>
+
+<div id="results" align="middle"></div>
+
+
+<!-- Webcam.min.js -->
+<script type="text/javascript" src="webcamjs/webcam.min.js"></script>
+
+<!-- Configure a few settings and attach camera -->
+<script language="JavaScript">
+    Webcam.set({
+        width: 600,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+    });
+    Webcam.attach( '#my_camera' );
+
+
+
+    // <!-- Code to handle taking the snapshot and displaying it locally -->
+    document.getElementById("btn2").style.visibility = "hidden";
+
+    function take_snapshot() {
+
+        // take snapshot and get image data
+        Webcam.snap( function(data_uri) {
+            // display results in page
+            document.getElementById('my_camera').innerHTML =
+                '<img src="'+data_uri+'"/>';
+
+            document.getElementById("btn1").style.visibility = "hidden";
+            document.getElementById("btn2").style.visibility = "visible";
+            console.log("URI:",data_uri);
+        } );
+
+    }
+
+    // function hideEle(){
+    //     document.getElementById("my_camera").style.visibility = "hidden";
+    // }
+    function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        console.log("..........................",xhttp);
+        xhttp.onreadystatechange = function () {
+
+            xhttp.open("GET", '{"file":"data_uri"}', true);
+            console.log(this.responseText);
+            xhttp.send();
+        };
+    };
+
+
+
+
+</script>
+
+
+</body>
+</html>
+
+

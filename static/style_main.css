@@ -1,0 +1,57 @@
+
+body{
+
+    background-image: url("pic/bg1.jpg");
+    max-width: 100% !important;
+    height: 100%;
+    background-size: cover ;
+    background-attachment: fixed;
+}
+#txt5{
+    margin-top: 4h;
+    font-size: 40px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#btn1{
+    margin-top: 10px;
+}
+#b1{
+    border:none;
+    background-color: #d90360;
+    margin-top: 10px;
+    padding: 10px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 20px;
+    width: 15% !important;
+}
+#b1:hover{
+    cursor: pointer;
+    color: black;
+}
+#my_camera{
+    width: 320px;
+    height: 440px;
+    margin-top: 40px;
+    margin-left: 31%;
+    border-radius: 10px;
+}
+#results{
+    margin-left: 0%;
+}
+@media only screen
+and (max-device-width : 900px)
+{
+.c1{
+    max-width: 90% !important;
+}
+#txt1,#txt2{
+    font-size: 30px;
+    padding:20px;
+}
+.ip1,.ip2,.ip3,.ip4{
+    padding:20px
+}
+}
