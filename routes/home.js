@@ -65,8 +65,9 @@ router.get('/result',(req,res,next)=>{
         scrape("https://www.amazon.co.uk/s/?field-keywords=","black+pants+for+men")
         .then(()=>{
             fs.readFile(__dirname + '/scraped.txt','utf8',(err,data)=>{
-                res.send(data)//data = data.split('$');
-                //res.render("result",{data});
+                fs.readFile(__dirname+'/html.txt','utf8',(err,d)=>{
+                    res.send(d+data+'</div></body>')
+                });
             });
         })
         .catch((err)=>{

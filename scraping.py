@@ -12,7 +12,7 @@ def bfulSoup(url):    #to return google,youtube and wiki links to given query ad
         imgs = content.findAll('a',{'class','a-link-normal'})
         f=open('routes/scraped.txt','w')
         for img in imgs:
-            f.write(str(img) + '$')
+            f.write(str(img))
         f.close()
 
 
