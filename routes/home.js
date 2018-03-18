@@ -5,8 +5,8 @@ const multer = require("multer");
 const fs = require("fs");
 
 var uploads = multer({dest:'public/images/'});
-//TODO uncomment this
-//router.use(verifyRoute);
+
+router.use(verifyRoute);
 
 router.get('/',(req,res,next)=>{
     res.json({message:"You have reached home"});
@@ -19,7 +19,7 @@ router.post('/',uploads.single("file"),(req,res,next)=>{
         res.redirect('/home');
     }
     else{
-        fs.rename(req.file.path,"uploads/"+req.file.originalname)
+        fs.rename(req.file.path,"public/images/"+req.file.originalname)
         .then(()=>{
             res.redirect('/home/result');
         })
