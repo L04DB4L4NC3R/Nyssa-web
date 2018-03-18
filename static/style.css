@@ -1,21 +1,75 @@
-body{
+.main{
     background-image: url("pic/bg1.jpg");
     max-width: 100% !important;
     height: 100%;
     background-size: cover ;
     background-attachment: fixed;
 }
+
+a {
+     color: #ffffff !important;
+     font-size: 16px;
+     -webkit-transition: all 0.2s;
+     -moz-transition: all 0.2s;
+     transition: all 0.2s !important;
+ }
+
+
+.c3{
+    background-color:white;
+    max-width: 100% !important;
+
+}
+#txt5{
+    padding-top: 120px;
+    font-size: 50px;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+#txt4{
+    font-size: 30px;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+#cont2{
+    height: 60vh;
+}
+.footer{
+    margin-top: -10vh;
+}
+
 .i1{
 
-    margin-top: 20px;
+    margin-top: 30px;
     width:450px;
 
 }
-#anch1{
-    color:white!important;
+.i1sign_up{
+    margin-top: 30px;
+    width:300px;
 }
-
-
+.b1,.b2,.b3,.b4,.b0{
+    color: white !important;
+    padding-right: 30px !important;
+}
+#mainNav {
+    opacity:0.2;
+    border-bottom: 1px solid rgba(33, 37, 41, 0.1);
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+#txt3{
+    margin-top:20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+}
+.c2{
+    background-color: white;
+    padding: 80px;
+}
 .c1{
     padding:10px;
     border-radius: 20px;
@@ -26,7 +80,7 @@ body{
     max-width: 40% !important;
     font-family: 'Raleway', sans-serif;
 }
-.ip1,.ip2{
+.ip1,.ip2, .ip3, .ip4{
     padding: 10px;
     width:400px;
 }
@@ -67,7 +121,19 @@ input[type=text], input[type=password]{
     text-align: center;
     max-width:60%;
 }
-
+#footer{
+    height: 15vh;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    color:white;
+}
+#footer_link{
+    padding-left: 0px;
+}
+.footer-ul{
+    margin-bottom: 0px !important;
+}
 /*Media Queries*/
 @media only screen
 and (max-device-width : 400px)
@@ -81,7 +147,7 @@ and (max-device-width : 400px)
         font-size: 40px;
         padding:20px;
     }
-    .ip1,.ip2{
+    .ip1,.ip2,.ip3,.ip4{
         font-size: 60px !important;
         padding:20px !important;
     }
@@ -110,7 +176,7 @@ and (max-device-width : 900px)
         font-size: 30px;
         padding:20px;
     }
-    .ip1,.ip2{
+    .ip1,.ip2,.ip3,.ip4{
         padding:20px
     }
 }

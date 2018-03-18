@@ -6,7 +6,7 @@ const fs = require("fs");
 
 var uploads = multer({dest:'public/images/'});
 //TODO uncomment this
-router.use(verifyRoute);
+//router.use(verifyRoute);
 
 router.get('/',(req,res,next)=>{
     res.json({message:"You have reached home"});
@@ -44,8 +44,8 @@ router.get('/result',(req,res,next)=>{
 //https://www.amazon.com/s/?field-keywords=
     //TODO make loop work
     //for(query of array){
-        scrape("https://www.flipkart.com/search?q=","skirt")
-        .then(object=>res.send(object.html))
+        scrape("https://www.amazon.co.uk/s/?field-keywords=","shirt")
+        .then(object=>res.sendStatus(200))
         .catch((err)=>{
             console.log(err);
             res.sendStatus(500);

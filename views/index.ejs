@@ -5,39 +5,103 @@
     <title>Nyssa</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway|Sacramento" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css?family=Nova+Square" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Parisienne" rel="stylesheet">
 </head>
 
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger b0" href="#page-top"><b>HOME</b></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="border-color:rgba(240, 233, 233, 0.5);" >
+            <span class="navbar-toggler-icon" style="background-image:url('./img/ham.png');"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger b1" id="btn1" href="#cont2" ><b>ABOUT</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger b2" id="btn2" href="#high"><b>HIGHLIGHTS</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger b3"id="btn3" href="#speak"><b>CONTACT</b></a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
 
 <div class="container-fluid main" align="middle">
-    <img src="./static/pic/Logo.png" class="img-responsive i1" align="middle">
+    <img src="../static/pic/logo.png" class="img-responsive i1" align="middle">
     <div class="container c1" align="middle">
         <div id="txt1">Sign into your account</div><hr>
         <form action="/login" method='post'>
         <div id="mail">
         <div class="input-group ip1" align="middle">
-            <input type="text" id="i1" placeholder="E-mail ID" class="form-control f1" name="name" >
+            <input type="text" id="i1" placeholder="E-mail ID" class="form-control f1" >
         </div>
         </div>
         <div id="psw">
         <div class="input-group ip2"  align="middle">
-            <input type="password" placeholder="Password" id="i2" class="form-control f2" name="passwd" >
+            <input type="password" placeholder="Password" id="i2" class="form-control f2" >
         </div>
         </div>
-        <button class="btn" type="submit" id="b1"><strong>LOGIN</strong></button><BR>
-    </form>
+        <button class="btn" type="button" id="b1"><strong>LOGIN</strong></button><BR>
+        </form>
         <div id="txt2">Forgot your password?</div><hr>
         <div id="txt2">Don't have an account? <a id="anch1" href="/register">Sign Up.</a></div>
 
-
     </div>
 </div>
+
+
+
+
+<section id="cont2">
+    <br><br>
+    <br>
+<div class="container-fluid row">
+    <div class="col-sm-4" align="right"><img src="pic/bg4.png" style="height:300px" class="img-responsive i2"></div><br><br><br>
+<div class="col-sm-6" align="middle">
+
+    <div id="txt3">
+        Hey, I am your Intelligent stylist.<br>
+        Life's too short too wear boring clothes.<br>
+        Let's Make A Change.
+    </div>
+
+
+
+</div>
+</div>
+</section>
+
+<section id="footer" align="middle">
+    <div id="foot2">The Developer Rights are Reserved With Abhirupa, Angad, Allen, Mayank, Gaurav.</div>
+        <div class="copyright">&copy; Copyright 2017. All rights reserved.</div>
+
+</section>
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
 
 </body>
 </html>

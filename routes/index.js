@@ -40,6 +40,9 @@ router.post("/login",(req,res,next)=>{
     });
 });
 
+router.get('/register',(req,res,next)=>{
+    res.render('signup');
+});
 
 router.post('/register',(req,res,next)=>{
 

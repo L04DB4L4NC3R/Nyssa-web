@@ -1,5 +1,7 @@
 const request = require("request");
 const cheerio = require("cheerio");
+var pythonshell = require("python-shell");
+const fs = require('fs');
 
 
 
@@ -11,22 +13,14 @@ module.exports.scrape = (url,query)=>{
         //concatenate search requirement to form query string TODO make it web parsable
         url += query;
 
-        request(url,(err,resp,data)=>{
-
-            if(err) reject(err);
-
-            var $ = cheerio.load(data);
-
-            //TODO
-            var dom = 'div._2SxMvQ';
-            var soup = $(dom);
-
-            // $(dom).each((i,data)=>{
-            //     var element = $(this);
-            //     console.log(element);
-            // });
-            resolve({html:soup.html()});
-
+            pythonshell.run('../scraping.py '+url,(err)=>{
+            if(err){
+                console.log(err);
+                reject({html:err});
+            }
+            console.log("Ran a python script using node js");
+            resolve({html:"done"});
         });
+
     });
 }
