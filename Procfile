@@ -1,2 +1,2 @@
 web: node app.js
-worker: python scraping.py
+worker: python3 scraping.py
